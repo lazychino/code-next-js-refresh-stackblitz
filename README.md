@@ -228,13 +228,31 @@ Destructuring assignment allows you to get a subset of object element as local v
 
 ```js
 // It can be used with let or const.
-const {a, b} = someObject; // in this case of
+const {a, b} = someObject;
+// In this case of a and b are properties of someObject and
+// are being assing as local variable to this scope.
 
+// Equivalent to
+const a = someObject.a;
+const b = someObject.b;
 ```
 
 ```js
+const someArray = [1,2,3,4,5]
+
 // It can be also used with arrays
-let [first, second, ...rest] = someOtherObject;
+let [first, second, ...rest] = someArray;
+
+// This is equivalent to
+let first = someArray[0];
+let second = someArray[2];
+let rest = someArray.slice(2);
+
+// For both case the output is
+console.log(first);   // 1
+console.log(second); // 2
+console.log(rest);   // [3,4,5]
+
 ```
 
 ### YOUR TURN
